@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    background-color: #89C15E;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scroreBoard{
+    display: flex;
+    gap: 3rem;
+}
+
+.scoreContainer{
+    display: flex;
+}
