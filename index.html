@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissor</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <section class="scroreBoard">
@@ -15,29 +20,79 @@
                 <p>SCISSORS</p>
             </div>
             <div class="scoreContainer">
-                <div class="computerScore">
-                    <P>COMPUTER SCORE</P>
-                    <P>0</P>
+                <div class="computerScore score">
+                    <P>COMPUTER</P>
+                    <p>SCORE</P>
+                    <P class="scoreNum">0</P>
                 </div>
-                <div class="userScore">
-                    <P>YOUR SCORE</P>
-                    <P>0</P>
+                <div class="userScore score">
+                    <P>YOUR</P>
+                    <p>SCORE</P>
+                    <P class="scoreNum">0</P>
                 </div>
             </div>
         </section>
         <section class="gameBoard">
-
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+            </div>
+            <div class="actions">
+                <div class="action rockAction">
+                    <img src="Images/rock.png" alt="rock">
+                </div>
+                <div class="action paperAction">
+                    <img src="Images/paper.png" alt="paper">
+                </div>
+                <div class="action scissorAction">
+                    <img src="Images/scissor.png" alt="scissor">
+                </div>
+            </div>
         </section>
-        <section class="winBoard">
-
-        </section>
-        <section class="looseBoard">
-
-        </section>
-        <section class="tieBoard">
-
+        <section class="resultBoard">
+            <div class="winBoard displayResultBoard">
+                <div class="action">
+                    <p>SCISSOR</p>
+                </div>
+                <div class="win-wrapper">
+                    <h3>You win</h3>
+                    <p>Against PC</p>
+                    <button>Play Again</button>
+                </div>
+                <div class="action">
+                    <p>PAPER</p>
+                </div>
+            </div>
+            <div class="looseBoard displayResultBoard">
+                <div class="action">
+                    <p>PAPER</p>
+                </div>
+                <div class="win-wrapper">
+                    <h3>You Lost</h3>
+                    <p>Against PC</p>
+                    <button>Play Again</button>
+                </div>
+                <div class="action">
+                    <p>SCISSOR</p>
+                </div>
+            </div>
+            <div class="tieBoard displayResultBoard">
+                <div class="action">
+                    <p>ROCK</p>
+                </div>
+                <div class="win-wrapper">
+                    <h3>TIE UP</h3>
+                    <br>
+                    <button>Play Again</button>
+                </div>
+                <div class="action">
+                    <p>ROCK</p>
+                </div>
+            </div>
         </section>
     </div>
-    
+<script src="script.js"></script>
 </body>
+
 </html>
