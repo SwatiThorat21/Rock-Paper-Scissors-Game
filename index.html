@@ -32,59 +32,59 @@
                 </div>
             </div>
         </section>
-        <section class="gameBoard">
+        <section class="gameBoard" id="gameBoard">
             <div class="lines">
                 <div class="line"></div>
                 <div class="line line-2"></div>
                 <div class="line line-3"></div>
             </div>
             <div class="actions">
-                <div class="action rockAction" id="rockAction_btn">
-                    <img src="Images/rock.png" alt="rock">
+                <div class="action rockAction">
+                    <img src="Images/rock.png" alt="rock" id="rock">
                 </div>
-                <div class="action paperAction" id="paperAction_btn">
-                    <img src="Images/paper.png" alt="paper">
+                <div class="action paperAction">
+                    <img src="Images/paper.png" alt="paper"  id="paper">
                 </div>
-                <div class="action scissorAction" id="scissorAction_btn">
-                    <img src="Images/scissor.png" alt="scissor">
+                <div class="action scissorAction">
+                    <img src="Images/scissor.png" alt="scissor" id="scissor">
                 </div>
             </div>
         </section>
         <section class="resultBoard">
-            <div class="winBoard displayResultBoard">
+            <div class="winBoard displayResultBoard" id="winBoard">
                 <div class="action">
                     <p>SCISSOR</p>
                 </div>
                 <div class="win-wrapper">
                     <h3>You win</h3>
                     <p>Against PC</p>
-                    <button>Play Again</button>
+                    <button class="replayBtn">Play Again</button>
                 </div>
                 <div class="action">
                     <p>PAPER</p>
                 </div>
             </div>
-            <div class="looseBoard displayResultBoard">
+            <div class="lostBoard displayResultBoard" id="lostBoard">
                 <div class="action">
                     <p>PAPER</p>
                 </div>
                 <div class="win-wrapper">
                     <h3>You Lost</h3>
                     <p>Against PC</p>
-                    <button>Play Again</button>
+                    <button class="replayBtn">Play Again</button>
                 </div>
                 <div class="action">
                     <p>SCISSOR</p>
                 </div>
             </div>
-            <div class="tieBoard displayResultBoard">
+            <div class="tieupBoard displayResultBoard" id="tieupBoard">
                 <div class="action">
                     <p>ROCK</p>
                 </div>
                 <div class="win-wrapper">
                     <h3>TIE UP</h3>
                     <br>
-                    <button>Play Again</button>
+                    <button class="replayBtn">Play Again</button>
                 </div>
                 <div class="action">
                     <p>ROCK</p>

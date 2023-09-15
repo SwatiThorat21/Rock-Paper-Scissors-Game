@@ -105,9 +105,9 @@ body {
 .winBoard{
     display: none;
 }
-.looseBoard{
+.lostBoard{
     display: none;
 }
-.tieBoard{
+.tieupBoard{
     display: none;
 }

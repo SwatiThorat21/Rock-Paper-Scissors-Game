@@ -1,6 +1,9 @@
-let rockAction_btn = document.getElementById("rockAction_btn");
-let paperAction_btn = document.getElementById("paperAction_btn");
-let scissorAction_btn = document.getElementById("scissorAction_btn");
+let actionBtns = document.querySelectorAll(".action");
+let winBoard = document.getElementById("winBoard");
+let lostBoard = document.getElementById("lostBoard");
+let tieupBoard = document.getElementById("tieupBoard");
+let gameBoard = document.getElementById("gameBoard");
+let replayBtn = document.querySelectorAll('.replayBtn');
 
 let gameData = {
   pcScore: 0,
@@ -11,67 +14,50 @@ let gameData = {
 
 localStorage.setItem("gameData", JSON.stringify(gameData));
 
-rockAction_btn.addEventListener("click", () => {
+function computerPicked() {
   let pcOptions = ["rock", "paper", "scissor"];
   let pcChoiseNumber = Math.floor(Math.random() * 3);
-  let pcChoise = pcOptions[pcChoiseNumber];
-  console.log(pcChoise);
-  const updatedGameData = JSON.parse(localStorage.getItem("gameData"));
-  updatedGameData.userPicked = "rock";
-  updatedGameData.pcPicked = pcChoise;
-  if (
-    updatedGameData.userPicked == "rock" &&
-    updatedGameData.pcPicked == "scissor"
-  ) {
-    updatedGameData.userScore++;
-  } else if (
-    updatedGameData.userPicked == "scissor" &&
-    updatedGameData.pcPicked == "rock"
-  ) {
-    updatedGameData.pcScore++;
-  }
-  localStorage.setItem("gameData", JSON.stringify(updatedGameData));
+  return pcOptions[pcChoiseNumber];
+}
+
+actionBtns.forEach((btn) => {
+  btn.addEventListener("click", playGame);
 });
 
-paperAction_btn.addEventListener("click", () => {
-  let pcOptions = ["rock", "paper", "scissor"];
-  let pcChoiseNumber = Math.floor(Math.random() * 3);
-  let pcChoise = pcOptions[pcChoiseNumber];
-  console.log(pcChoise);
-  const updatedGameData = JSON.parse(localStorage.getItem("gameData"));
-  updatedGameData.userPicked = "paper";
-  updatedGameData.pcPicked = pcChoise;
-  if (
-    updatedGameData.userPicked == "paper" &&
-    updatedGameData.pcPicked == "rock"
-  ) {
-    updatedGameData.userScore++;
-  } else if (
-    updatedGameData.userPicked == "rock" &&
-    updatedGameData.pcPicked == "paper"
-  ) {
-    updatedGameData.pcScore++;
-  }
-  localStorage.setItem("gameData", JSON.stringify(updatedGameData));
-});
-
-scissorAction_btn.addEventListener("click", () => {
-  let pcOptions = ["rock", "paper", "scissor"];
-  let pcChoiseNumber = Math.floor(Math.random() * 3);
-  let pcChoise = pcOptions[pcChoiseNumber];
+function playGame(e) {
+  let userChoice = e.target.id;
+  console.log(userChoice);
+  let pcChoise = computerPicked();
   let updatedGameData = JSON.parse(localStorage.getItem("gameData"));
-  updatedGameData.userPicked = "scissor";
+  updatedGameData.userPicked = userChoice;
   updatedGameData.pcPicked = pcChoise;
-  if (
-    updatedGameData.userPicked == "scissor" &&
-    updatedGameData.pcPicked == "paper"
-  ) {
-    updatedGameData.userScore++;
+
+  const result = {
+    win: "You win",
+    lost: "You lost",
+    tieup: "Tie up",
+  };
+
+  let res;
+  if (userChoice === pcChoise) {
+    res = result.tieup;
+    tieupBoard.style.display = "flex";
+    gameBoard.style.display = "none";
   } else if (
-    updatedGameData.userPicked == "paper" &&
-    updatedGameData.pcPicked == "scissor"
+    (userChoice === "rock" && pcChoise === "scissors") ||
+    (userChoice === "paper" && pcChoise === "rock") ||
+    (userChoice === "scissors" && pcChoise === "paper")
   ) {
+    res = result.win;
+    updatedGameData.userScore++;
+    winBoard.style.display = "flex";
+    gameBoard.style.display = "none";
+  } else {
+    res = result.lost;
     updatedGameData.pcScore++;
+    lostBoard.style.display = "flex";
+    gameBoard.style.display = "none";
   }
+
   localStorage.setItem("gameData", JSON.stringify(updatedGameData));
-});
+}
