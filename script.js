@@ -3,16 +3,14 @@ let winBoard = document.getElementById("winBoard");
 let lostBoard = document.getElementById("lostBoard");
 let tieupBoard = document.getElementById("tieupBoard");
 let gameBoard = document.getElementById("gameBoard");
-let replayBtn = document.querySelectorAll('.replayBtn');
+let replayBtn = document.querySelectorAll(".replayBtn");
 
-let gameData = {
+let gameData = JSON.parse(localStorage.getItem("gameData")) || {
   pcScore: 0,
   userScore: 0,
   pcPicked: undefined,
   userPicked: undefined,
 };
-
-localStorage.setItem("gameData", JSON.stringify(gameData));
 
 function computerPicked() {
   let pcOptions = ["rock", "paper", "scissor"];
@@ -24,13 +22,21 @@ actionBtns.forEach((btn) => {
   btn.addEventListener("click", playGame);
 });
 
+replayBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    gameBoard.style.display = "grid";
+    tieupBoard.style.display = "none";
+    winBoard.style.display = "none";
+    lostBoard.style.display = "none";
+  });
+});
+
 function playGame(e) {
   let userChoice = e.target.id;
   console.log(userChoice);
   let pcChoise = computerPicked();
-  let updatedGameData = JSON.parse(localStorage.getItem("gameData"));
-  updatedGameData.userPicked = userChoice;
-  updatedGameData.pcPicked = pcChoise;
+  gameData.userPicked = userChoice;
+  gameData.pcPicked = pcChoise;
 
   const result = {
     win: "You win",
@@ -44,20 +50,20 @@ function playGame(e) {
     tieupBoard.style.display = "flex";
     gameBoard.style.display = "none";
   } else if (
-    (userChoice === "rock" && pcChoise === "scissors") ||
+    (userChoice === "rock" && pcChoise === "scissor") ||
     (userChoice === "paper" && pcChoise === "rock") ||
-    (userChoice === "scissors" && pcChoise === "paper")
+    (userChoice === "scissor" && pcChoise === "paper")
   ) {
     res = result.win;
-    updatedGameData.userScore++;
+    gameData.userScore++;
     winBoard.style.display = "flex";
     gameBoard.style.display = "none";
   } else {
     res = result.lost;
-    updatedGameData.pcScore++;
+    gameData.pcScore++;
     lostBoard.style.display = "flex";
     gameBoard.style.display = "none";
   }
 
-  localStorage.setItem("gameData", JSON.stringify(updatedGameData));
+  localStorage.setItem("gameData", JSON.stringify(gameData));
 }
