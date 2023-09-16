@@ -4,6 +4,8 @@ let lostBoard = document.getElementById("lostBoard");
 let tieupBoard = document.getElementById("tieupBoard");
 let gameBoard = document.getElementById("gameBoard");
 let replayBtn = document.querySelectorAll(".replayBtn");
+let scoreContainer = document.getElementById("scoreContainer");
+
 
 let gameData = JSON.parse(localStorage.getItem("gameData")) || {
   pcScore: 0,
@@ -12,6 +14,7 @@ let gameData = JSON.parse(localStorage.getItem("gameData")) || {
   userPicked: undefined,
 };
 
+scoreContainer.innerHTML = getHTMLforScoreBoard();
 function computerPicked() {
   let pcOptions = ["rock", "paper", "scissor"];
   let pcChoiseNumber = Math.floor(Math.random() * 3);
@@ -31,9 +34,24 @@ replayBtn.forEach((btn) => {
   });
 });
 
+function getHTMLforScoreBoard() {
+  let scoreBoardHTML = `
+               <div class="computerScore score">
+                    <P>COMPUTER</P>
+                    <p>SCORE</P>
+                    <P class="scoreNum">${gameData.pcScore}</P>
+                </div>
+                <div class="userScore score">
+                    <P>YOUR</P>
+                    <p>SCORE</P>
+                    <P class="scoreNum">${gameData.userScore}</P>
+                </div>
+`;
+  return scoreBoardHTML;
+}
+
 function playGame(e) {
   let userChoice = e.target.id;
-  console.log(userChoice);
   let pcChoise = computerPicked();
   gameData.userPicked = userChoice;
   gameData.pcPicked = pcChoise;
@@ -58,11 +76,13 @@ function playGame(e) {
     gameData.userScore++;
     winBoard.style.display = "flex";
     gameBoard.style.display = "none";
+    scoreContainer.innerHTML = getHTMLforScoreBoard();
   } else {
     res = result.lost;
     gameData.pcScore++;
     lostBoard.style.display = "flex";
     gameBoard.style.display = "none";
+    scoreContainer.innerHTML = getHTMLforScoreBoard();
   }
 
   localStorage.setItem("gameData", JSON.stringify(gameData));

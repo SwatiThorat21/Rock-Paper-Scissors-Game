@@ -76,38 +76,49 @@ body {
   left: 74px;
   top: 82px;
 }
-.actions {
-  /* position: relative; */
+.action {
+  width: 150px;
+  height: 150px;
+  background-color: #ffff;
+  box-shadow: inset 3px 0px 21px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(-1px 1px 11px rgba(0, 0, 0, 0.35));
 }
 .rockAction {
   position: absolute;
-  right: 80%;
-  bottom: 0;
+  right: 65%;
+  bottom: -46px;
+  border: 16px solid #0074b6;
 }
 .paperAction {
   position: absolute;
-  left: 86%;
-  bottom: 0;
+  left: 66%;
+  bottom: -46px;
+  border: 16px solid #ffa943;
 }
 .scissorAction {
   position: absolute;
-  top: 183px;
-  left: 120px;
+  top: 125px;
+  left: 63px;
+  border: 16px solid #bd00ff;
 }
-.displayResultBoard{
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+.displayResultBoard {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
-.resultBoard{
-    margin-top: 10rem;
+.resultBoard {
+  margin-top: 10rem;
 }
-.winBoard{
-    display: none;
+.winBoard {
+  display: none;
 }
-.lostBoard{
-    display: none;
+.lostBoard {
+  display: none;
 }
-.tieupBoard{
-    display: none;
+.tieupBoard {
+  display: none;
 }
