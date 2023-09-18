@@ -23,7 +23,7 @@
 
             </div>
         </section>
-        <section class="gameBoard" id="gameBoard" style="display: none;">
+        <section class="gameBoard" id="gameBoard">
             <div class="lines">
                 <div class="line"></div>
                 <div class="line line-2"></div>
@@ -41,57 +41,66 @@
                 </div>
             </div>
         </section>
+
         <section class="resultBoard" id="resultBoard">
-
-            <div class="winBoard displayResultBoard" id="winBoard">
-                <div class="winner_wrapper">
-                    <div class="thirdOuterDiv">
-                        <div class="secondOuterDiv">
-                            <div class="firstOuterDiv">
-                                <div class="action action_wrapper">
-                                    <p class="pickedActionText">YOU PICKED</p>
-                                    <img src="Images/paper.png" alt="paper" id="paper">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="win-wrapper result">
-                    <h3>You win</h3>
-                    <p>Against PC</p>
-                    <button class="replayBtn">Play Again</button>
-                </div>
-                <div class="action">
-                    <p class="pickedActionText">PC PICKED</p>
-                    <img src="Images/paper.png" alt="paper" id="paper">
-                </div>
-            </div>
-
-            <div class="lostBoard displayResultBoard" id="lostBoard">
-                <div class="action">
-                    <p class="pickedActionText">YOU PICKED</p>
-                    <img src="Images/paper.png" alt="paper" id="paper">
-                </div>
-                <div class="win-wrapper result">
-                    <h3>You Lost</h3>
-                    <p>Against PC</p>
-                    <button class="replayBtn">Play Again</button>
-                </div>
-                <div class="winner_wrapper">
-                    <div class="thirdOuterDiv">
-                        <div class="secondOuterDiv">
-                            <div class="firstOuterDiv">
-                                <div class="action action_wrapper">
-                                    <p class="pickedActionText">PC PICKED</p>
-                                    <img src="Images/paper.png" alt="paper" id="paper">
-                                </div>
+            <div>
+                <div id="thirdUserOuterDiv">
+                    <div id="secondUserOuterDiv">
+                        <div id="firstUserOuterDiv">
+                            <div class="action action_wrapper" id="userPickedAction">
+                                <p class="pickedActionText">YOU PICKED</p>
+                                <img src="" alt="user selected img" id="userPickedImg">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+            <div class="resultText-wrapper result" id="resultText_wrapper">
+                <h3 id="resultText"></h3>
+                <p id="resultTextPara">Against PC</p>
+                <button class="replayBtn">Play Again</button>
+            </div>
+            <div>
+                <div id="thirdPcOuterDiv">
+                    <div id="secondPcOuterDiv">
+                        <div id="firstPcOuterDiv">
+                            <div class="action action_wrapper" id="pcPickedAction">
+                                <p class="pickedActionText">PC PICKED</p>
+                                <img src="" alt="pc Picked Img" id="pcPickedImg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <div class="btn_wrapper">
+            <button class="rulesBtn btn" id="rulesBtn">RULES</button>
+            <button class="nextBtn btn" id="nextBtn">NEXT</button>
+        </div>
+        <div class="rules_box" id="rules_box">
+            <div class="closeBtn" id="closeBtn">
+                <img src="Images/closeIcon.png" alt="closeIcon">
+            </div>
+            <h3 class="rulesHeading">Game Rules</h3>
+            <ul>
+                <li><img src="Images/Rectangle.png" alt="rectangleIcon">
+                    Rock beats scissors, scissors beat paper, and paper beats rock.
+                </li>
+                <li><img src="Images/Rectangle.png" alt="rectangleIcon">
+                    Agree ahead of time whether you’ll count off “rock, paper, scissors,
+                    shoot” or just “rock, paper, scissors.”
+                </li>
+                <li><img src="Images/Rectangle.png" alt="rectangleIcon">
+                    Use rock, paper, scissors to settle minor decisions or simply play
+                    to pass the time.
+                </li>
+                <li><img src="Images/Rectangle.png" alt="rectangleIcon">
+                    If both players lay down the same hand, each player lays down
+                    another hand.
+                </li>
+            </ul>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

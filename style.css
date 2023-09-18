@@ -105,26 +105,15 @@ body {
   left: 63px;
   border: 16px solid #bd00ff;
 }
-.displayResultBoard {
+.resultBoard {
   display: flex;
   gap: 1rem;
   align-items: center;
-}
-.resultBoard {
   margin-top: 2rem;
-}
-.winBoard {
-  display: none;
-}
-.lostBoard {
-  display: none;
-}
-.tieupBoard {
   display: none;
 }
 .rockAction img:hover,
-.paperAction img:hover
-{
+.paperAction img:hover {
   transform: scale(1.2);
 }
 .scissorAction img:hover {
@@ -153,36 +142,36 @@ body {
   transition: all 0.01s ease-in-out;
   cursor: pointer;
 }
-.firstOuterDiv{
+.firstOuterDiv {
   padding: 2rem;
   background-color: #289a27;
   border-radius: 50%;
 }
-.secondOuterDiv{
+.secondOuterDiv {
   padding: 2rem;
   background-color: #32a62f;
   border-radius: 50%;
 }
-.thirdOuterDiv{
+.thirdOuterDiv {
   padding: 1.5rem;
   background-color: #66b248;
   box-shadow: 0px 1px 62px rgba(0, 0, 0, 0.13);
   border-radius: 50%;
 }
-.action_wrapper{
+.action_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.pickedActionText{
+.pickedActionText {
   position: fixed;
   top: -48px;
   font-size: 20px;
   color: #ffffff;
   letter-spacing: 2.4px;
 }
-.result{
+.result {
   color: #ffffff;
   font-weight: 800;
   text-transform: uppercase;
@@ -190,17 +179,16 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
- 
 }
-.win-wrapper h3{
+.resultText_wrapper h3 {
   font-size: 40px;
   letter-spacing: 5px;
 }
-.win-wrapper p{
+.resultText_wrapper p {
   font-size: 25px;
   letter-spacing: 2px;
 }
-.replayBtn{
+.replayBtn {
   background-color: #ffffff;
   color: #6b6b6b;
   padding: 0.7rem 1.7rem;
@@ -212,5 +200,86 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
-  
+}
+.btn_wrapper {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 0.7rem;
+}
+.btn {
+  background-color: transparent;
+  color: #ffff;
+  border: 2px solid #ffff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #ffff;
+  color: #6b6b6b;
+  transition: all 0.2s ease-in-out;
+}
+.rules_box {
+  position: absolute;
+  right: 40px;
+  bottom: 80px;
+  color: #ffffff;
+  width: 300px;
+  background-color: #004429;
+  border: 7px solid #ffffff;
+  border-radius: 13px;
+  padding: 2rem;
+  display: none;
+}
+.closeBtn {
+  position: absolute;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  right: -31px;
+  top: -29px;
+  background-color: #ff0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.rulesHeading{
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.rules_box >ul>li{
+  font-size: 0.8rem;
+  text-align: justify;
+  list-style: none;
+  margin-bottom: 0.6rem;
+  /* letter-spacing: 1px; */
+}
+li img{
+  margin-right: 6px;
+}
+#nextBtn{
+  display: none;
+}
+.rock{
+  border: 16px solid #0074b6;
+}
+.paper{
+  border: 16px solid #ffa943;
+}
+.scissor{
+  border: 16px solid #bd00ff;
 }
