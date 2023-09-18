@@ -1,10 +1,11 @@
 let actionBtns = document.querySelectorAll(".action");
 let winBoard = document.getElementById("winBoard");
 let lostBoard = document.getElementById("lostBoard");
-let tieupBoard = document.getElementById("tieupBoard");
+// let tieupBoard = document.getElementById("tieupBoard");
 let gameBoard = document.getElementById("gameBoard");
 let replayBtn = document.querySelectorAll(".replayBtn");
 let scoreContainer = document.getElementById("scoreContainer");
+let resultBoard = document.getElementById('resultBoard');
 
 
 let gameData = JSON.parse(localStorage.getItem("gameData")) || {
@@ -65,7 +66,24 @@ function playGame(e) {
   let res;
   if (userChoice === pcChoise) {
     res = result.tieup;
-    tieupBoard.style.display = "flex";
+    // tieupBoard.style.display = "flex";
+    resultBoard.innerHTML = `
+            <div class="tieupBoard displayResultBoard" id="tieupBoard"  style="display: flex; margin-top: 7rem;">
+                <div class="action">
+                    <p class="pickedActionText">YOU PICKED</p>
+                    <img src="Images/paper.png" alt="paper" id="paper">
+                </div>
+                <div class="win-wrapper result">
+                    <h3>TIE UP</h3>
+                    <br>
+                    <button class="replayBtn">Play Again</button>
+                </div>
+                <div class="action">
+                    <p class="pickedActionText">PC PICKED</p>
+                    <img src="Images/paper.png" alt="paper" id="paper">
+                </div>
+            </div>
+    `
     gameBoard.style.display = "none";
   } else if (
     (userChoice === "rock" && pcChoise === "scissor") ||

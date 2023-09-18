@@ -20,10 +20,10 @@
                 <p>SCISSORS</p>
             </div>
             <div class="scoreContainer" id="scoreContainer">
-                
+
             </div>
         </section>
-        <section class="gameBoard" id="gameBoard">
+        <section class="gameBoard" id="gameBoard" style="display: none;">
             <div class="lines">
                 <div class="line"></div>
                 <div class="line line-2"></div>
@@ -34,56 +34,66 @@
                     <img src="Images/rock.png" alt="rock" id="rock">
                 </div>
                 <div class="action paperAction">
-                    <img src="Images/paper.png" alt="paper"  id="paper">
+                    <img src="Images/paper.png" alt="paper" id="paper">
                 </div>
                 <div class="action scissorAction">
                     <img src="Images/scissor.png" alt="scissor" id="scissor">
                 </div>
             </div>
         </section>
-        <section class="resultBoard">
+        <section class="resultBoard" id="resultBoard">
+
             <div class="winBoard displayResultBoard" id="winBoard">
-                <div class="action">
-                    <p>SCISSOR</p>
+                <div class="winner_wrapper">
+                    <div class="thirdOuterDiv">
+                        <div class="secondOuterDiv">
+                            <div class="firstOuterDiv">
+                                <div class="action action_wrapper">
+                                    <p class="pickedActionText">YOU PICKED</p>
+                                    <img src="Images/paper.png" alt="paper" id="paper">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="win-wrapper">
+                <div class="win-wrapper result">
                     <h3>You win</h3>
                     <p>Against PC</p>
                     <button class="replayBtn">Play Again</button>
                 </div>
                 <div class="action">
-                    <p>PAPER</p>
+                    <p class="pickedActionText">PC PICKED</p>
+                    <img src="Images/paper.png" alt="paper" id="paper">
                 </div>
             </div>
+
             <div class="lostBoard displayResultBoard" id="lostBoard">
                 <div class="action">
-                    <p>PAPER</p>
+                    <p class="pickedActionText">YOU PICKED</p>
+                    <img src="Images/paper.png" alt="paper" id="paper">
                 </div>
-                <div class="win-wrapper">
+                <div class="win-wrapper result">
                     <h3>You Lost</h3>
                     <p>Against PC</p>
                     <button class="replayBtn">Play Again</button>
                 </div>
-                <div class="action">
-                    <p>SCISSOR</p>
+                <div class="winner_wrapper">
+                    <div class="thirdOuterDiv">
+                        <div class="secondOuterDiv">
+                            <div class="firstOuterDiv">
+                                <div class="action action_wrapper">
+                                    <p class="pickedActionText">PC PICKED</p>
+                                    <img src="Images/paper.png" alt="paper" id="paper">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="tieupBoard displayResultBoard" id="tieupBoard">
-                <div class="action">
-                    <p>ROCK</p>
-                </div>
-                <div class="win-wrapper">
-                    <h3>TIE UP</h3>
-                    <br>
-                    <button class="replayBtn">Play Again</button>
-                </div>
-                <div class="action">
-                    <p>ROCK</p>
-                </div>
-            </div>
+            
         </section>
     </div>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
