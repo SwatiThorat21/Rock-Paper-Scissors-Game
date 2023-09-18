@@ -42,6 +42,7 @@ replayBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     gameBoard.style.display = "grid";
     resultBoard.style.display = "none";
+    nextBtn.style.display = "none";
   });
 });
 
@@ -69,6 +70,13 @@ function playGame(e) {
 
   userPickedImg.setAttribute("src", `Images/${gameData.userPicked}.png`);
   pcPickedImg.setAttribute("src", `Images/${gameData.pcPicked}.png`);
+  userPickedAction.classList.remove('rock');
+  userPickedAction.classList.remove('paper');
+  userPickedAction.classList.remove('scissor');
+  pcPickedAction.classList.remove('rock');
+  pcPickedAction.classList.remove('paper');
+  pcPickedAction.classList.remove('scissor');
+  
   userPickedAction.classList.add(`${gameData.userPicked}`);
   pcPickedAction.classList.add(`${gameData.pcPicked}`);
  
@@ -81,8 +89,9 @@ function playGame(e) {
   if (userChoice === pcChoise) {
     res = result.tieup;
     gameBoard.style.display = "none";
-    resultBoard.style.display = "flex";
     resultText.innerText = "TIE UP";
+    resultBoard.style.display = "flex"; 
+    resultBoard.classList.add('tieupResultBoard');
     resultTextPara.style.display = "none";
     firstUserOuterDiv.classList.remove('firstOuterDiv');
     secondUserOuterDiv.classList.remove('secondOuterDiv');
@@ -90,31 +99,42 @@ function playGame(e) {
     firstPcOuterDiv.classList.remove('firstOuterDiv');
     secondPcOuterDiv.classList.remove('secondOuterDiv');
     thirdPcOuterDiv.classList.remove('thirdOuterDiv');
-  } else if (
+     } else if (
     (userChoice === "rock" && pcChoise === "scissor") ||
     (userChoice === "paper" && pcChoise === "rock") ||
     (userChoice === "scissor" && pcChoise === "paper")
   ) {
     res = result.win;
     gameData.userScore++;
+    resultText.innerText = "YOU WIN";
+    resultBoard.style.display = "flex";
     gameBoard.style.display = "none";
     nextBtn.style.display = "block";
+    resultTextPara.style.display = "block";
     scoreContainer.innerHTML = getHTMLforScoreBoard();
-    resultBoard.style.display = "flex";
     firstUserOuterDiv.classList.add('firstOuterDiv');
     secondUserOuterDiv.classList.add('secondOuterDiv');
     thirdUserOuterDiv.classList.add('thirdOuterDiv');
-    resultText.innerText = "YOU WIN"
+    firstPcOuterDiv.classList.remove('firstOuterDiv');
+    secondPcOuterDiv.classList.remove('secondOuterDiv');
+    thirdPcOuterDiv.classList.remove('thirdOuterDiv');
+    resultBoard.classList.remove('tieupResultBoard'); 
+
   } else {
     res = result.lost;
     gameData.pcScore++;
     gameBoard.style.display = "none";
     scoreContainer.innerHTML = getHTMLforScoreBoard();
     resultBoard.style.display = "flex";
+    resultTextPara.style.display = "block";
     firstPcOuterDiv.classList.add('firstOuterDiv');
     secondPcOuterDiv.classList.add('secondOuterDiv');
     thirdPcOuterDiv.classList.add('thirdOuterDiv');
+    firstUserOuterDiv.classList.remove('firstOuterDiv');
+    secondUserOuterDiv.classList.remove('secondOuterDiv');
+    thirdUserOuterDiv.classList.remove('thirdOuterDiv');
     resultText.innerText = "YOU LOST"
+    resultBoard.classList.remove('tieupResultBoard');
   }
 
   localStorage.setItem("gameData", JSON.stringify(gameData));
@@ -128,4 +148,4 @@ closeBtn
   .addEventListener("click", () => {
     rules_box.style.display = "none";
   })
-  .nextBtn.addEventListener("click", () => {});
+  // .nextBtn.addEventListener("click", () => {});

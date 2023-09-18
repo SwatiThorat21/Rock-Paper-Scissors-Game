@@ -112,6 +112,9 @@ body {
   margin-top: 2rem;
   display: none;
 }
+.tieupResultBoard{
+  margin-top: 6rem;
+}
 .rockAction img:hover,
 .paperAction img:hover {
   transform: scale(1.2);
@@ -159,17 +162,24 @@ body {
   border-radius: 50%;
 }
 .action_wrapper {
+  width: 150px;
+  height: 150px;
+  background-color: #ffff;
+  box-shadow: inset 3px 0px 21px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  filter: drop-shadow(-1px 1px 11px rgba(0, 0, 0, 0.35));
 }
 .pickedActionText {
   position: fixed;
-  top: -48px;
+  top: -65px;
+  left: 0;
   font-size: 20px;
   color: #ffffff;
   letter-spacing: 2.4px;
+  width: 150px;
 }
 .result {
   color: #ffffff;
@@ -180,12 +190,12 @@ body {
   align-items: center;
   justify-content: center;
 }
-.resultText_wrapper h3 {
-  font-size: 40px;
+#resultText_wrapper h3 {
+  font-size: 35px;
   letter-spacing: 5px;
 }
-.resultText_wrapper p {
-  font-size: 25px;
+#resultText_wrapper p {
+  font-size: 20px;
   letter-spacing: 2px;
 }
 .replayBtn {
