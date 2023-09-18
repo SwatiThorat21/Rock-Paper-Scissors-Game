@@ -112,7 +112,7 @@ body {
   margin-top: 2rem;
   display: none;
 }
-.tieupResultBoard{
+.tieupResultBoard {
   margin-top: 6rem;
 }
 .rockAction img:hover,
@@ -264,32 +264,54 @@ body {
   cursor: pointer;
   transition: 0.5s ease-in-out;
 }
-.rulesHeading{
+.rulesHeading {
   margin-bottom: 1rem;
   font-size: 1.5rem;
   text-align: center;
   font-weight: 500;
   letter-spacing: 1px;
 }
-.rules_box >ul>li{
+.rules_box > ul > li {
   font-size: 0.8rem;
   text-align: justify;
   list-style: none;
   margin-bottom: 0.6rem;
   /* letter-spacing: 1px; */
 }
-li img{
+li img {
   margin-right: 6px;
 }
-#nextBtn{
+#nextBtn {
   display: none;
 }
-.rock{
+.rock {
   border: 16px solid #0074b6;
 }
-.paper{
+.paper {
   border: 16px solid #ffa943;
 }
-.scissor{
+.scissor {
   border: 16px solid #bd00ff;
+}
+#winner_page {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+.trophyImg {
+  position: absolute;
+  top: 92px;
+}
+#winner_page h3 {
+  font-size: 6rem;
+  font-weight: 500;
+  letter-spacing: 10px;
+  margin-top: 1rem;
+}
+#winner_page p {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 4px;
 }

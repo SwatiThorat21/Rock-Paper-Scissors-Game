@@ -12,13 +12,14 @@ let resultBoard = document.getElementById("resultBoard");
 let userPickedImg = document.getElementById("userPickedImg");
 let pcPickedImg = document.getElementById("pcPickedImg");
 let resultText = document.getElementById("resultText");
-let resultTextPara = document.getElementById('resultTextPara')
-let firstUserOuterDiv = document.getElementById('firstUserOuterDiv');
-let secondUserOuterDiv = document.getElementById('secondUserOuterDiv');
-let thirdUserOuterDiv = document.getElementById('thirdUserOuterDiv');
-let firstPcOuterDiv = document.getElementById('firstPcOuterDiv');
-let secondPcOuterDiv = document.getElementById('secondPcOuterDiv');
-let thirdPcOuterDiv = document.getElementById('thirdPcOuterDiv');
+let resultTextPara = document.getElementById("resultTextPara");
+let firstUserOuterDiv = document.getElementById("firstUserOuterDiv");
+let secondUserOuterDiv = document.getElementById("secondUserOuterDiv");
+let thirdUserOuterDiv = document.getElementById("thirdUserOuterDiv");
+let firstPcOuterDiv = document.getElementById("firstPcOuterDiv");
+let secondPcOuterDiv = document.getElementById("secondPcOuterDiv");
+let thirdPcOuterDiv = document.getElementById("thirdPcOuterDiv");
+let container = document.getElementById("container");
 
 let gameData = JSON.parse(localStorage.getItem("gameData")) || {
   pcScore: 0,
@@ -70,16 +71,16 @@ function playGame(e) {
 
   userPickedImg.setAttribute("src", `Images/${gameData.userPicked}.png`);
   pcPickedImg.setAttribute("src", `Images/${gameData.pcPicked}.png`);
-  userPickedAction.classList.remove('rock');
-  userPickedAction.classList.remove('paper');
-  userPickedAction.classList.remove('scissor');
-  pcPickedAction.classList.remove('rock');
-  pcPickedAction.classList.remove('paper');
-  pcPickedAction.classList.remove('scissor');
-  
+  userPickedAction.classList.remove("rock");
+  userPickedAction.classList.remove("paper");
+  userPickedAction.classList.remove("scissor");
+  pcPickedAction.classList.remove("rock");
+  pcPickedAction.classList.remove("paper");
+  pcPickedAction.classList.remove("scissor");
+
   userPickedAction.classList.add(`${gameData.userPicked}`);
   pcPickedAction.classList.add(`${gameData.pcPicked}`);
- 
+
   const result = {
     win: "You win",
     lost: "You lost",
@@ -90,16 +91,16 @@ function playGame(e) {
     res = result.tieup;
     gameBoard.style.display = "none";
     resultText.innerText = "TIE UP";
-    resultBoard.style.display = "flex"; 
-    resultBoard.classList.add('tieupResultBoard');
+    resultBoard.style.display = "flex";
+    resultBoard.classList.add("tieupResultBoard");
     resultTextPara.style.display = "none";
-    firstUserOuterDiv.classList.remove('firstOuterDiv');
-    secondUserOuterDiv.classList.remove('secondOuterDiv');
-    thirdUserOuterDiv.classList.remove('thirdOuterDiv');
-    firstPcOuterDiv.classList.remove('firstOuterDiv');
-    secondPcOuterDiv.classList.remove('secondOuterDiv');
-    thirdPcOuterDiv.classList.remove('thirdOuterDiv');
-     } else if (
+    firstUserOuterDiv.classList.remove("firstOuterDiv");
+    secondUserOuterDiv.classList.remove("secondOuterDiv");
+    thirdUserOuterDiv.classList.remove("thirdOuterDiv");
+    firstPcOuterDiv.classList.remove("firstOuterDiv");
+    secondPcOuterDiv.classList.remove("secondOuterDiv");
+    thirdPcOuterDiv.classList.remove("thirdOuterDiv");
+  } else if (
     (userChoice === "rock" && pcChoise === "scissor") ||
     (userChoice === "paper" && pcChoise === "rock") ||
     (userChoice === "scissor" && pcChoise === "paper")
@@ -112,14 +113,13 @@ function playGame(e) {
     nextBtn.style.display = "block";
     resultTextPara.style.display = "block";
     scoreContainer.innerHTML = getHTMLforScoreBoard();
-    firstUserOuterDiv.classList.add('firstOuterDiv');
-    secondUserOuterDiv.classList.add('secondOuterDiv');
-    thirdUserOuterDiv.classList.add('thirdOuterDiv');
-    firstPcOuterDiv.classList.remove('firstOuterDiv');
-    secondPcOuterDiv.classList.remove('secondOuterDiv');
-    thirdPcOuterDiv.classList.remove('thirdOuterDiv');
-    resultBoard.classList.remove('tieupResultBoard'); 
-
+    firstUserOuterDiv.classList.add("firstOuterDiv");
+    secondUserOuterDiv.classList.add("secondOuterDiv");
+    thirdUserOuterDiv.classList.add("thirdOuterDiv");
+    firstPcOuterDiv.classList.remove("firstOuterDiv");
+    secondPcOuterDiv.classList.remove("secondOuterDiv");
+    thirdPcOuterDiv.classList.remove("thirdOuterDiv");
+    resultBoard.classList.remove("tieupResultBoard");
   } else {
     res = result.lost;
     gameData.pcScore++;
@@ -127,14 +127,14 @@ function playGame(e) {
     scoreContainer.innerHTML = getHTMLforScoreBoard();
     resultBoard.style.display = "flex";
     resultTextPara.style.display = "block";
-    firstPcOuterDiv.classList.add('firstOuterDiv');
-    secondPcOuterDiv.classList.add('secondOuterDiv');
-    thirdPcOuterDiv.classList.add('thirdOuterDiv');
-    firstUserOuterDiv.classList.remove('firstOuterDiv');
-    secondUserOuterDiv.classList.remove('secondOuterDiv');
-    thirdUserOuterDiv.classList.remove('thirdOuterDiv');
-    resultText.innerText = "YOU LOST"
-    resultBoard.classList.remove('tieupResultBoard');
+    firstPcOuterDiv.classList.add("firstOuterDiv");
+    secondPcOuterDiv.classList.add("secondOuterDiv");
+    thirdPcOuterDiv.classList.add("thirdOuterDiv");
+    firstUserOuterDiv.classList.remove("firstOuterDiv");
+    secondUserOuterDiv.classList.remove("secondOuterDiv");
+    thirdUserOuterDiv.classList.remove("thirdOuterDiv");
+    resultText.innerText = "YOU LOST";
+    resultBoard.classList.remove("tieupResultBoard");
   }
 
   localStorage.setItem("gameData", JSON.stringify(gameData));
@@ -144,8 +144,12 @@ rulesBtn.addEventListener("click", () => {
   rules_box.style.display = "block";
 });
 
-closeBtn
-  .addEventListener("click", () => {
+closeBtn.addEventListener("click", () => {
     rules_box.style.display = "none";
   })
-  // .nextBtn.addEventListener("click", () => {});
+
+nextBtn.addEventListener("click", () => {
+  console.log('clicked')
+    winner_page.style.display = "flex";
+    container.style.display = "none";
+  });
