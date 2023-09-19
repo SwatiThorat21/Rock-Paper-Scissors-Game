@@ -8,7 +8,6 @@ A simple Rock, Paper, Scissors game created using HTML, CSS, and JavaScript.
 - #description
 - #features
 - #installation
-- #how-to-play
 
 ## Demo
 
@@ -19,6 +18,8 @@ Here's a quick video demo of the game:
 <video controls>  
   <source src="demo-video.mp4" type="video/mp4">  
 </video>
+
+
 
 ## Description
 
