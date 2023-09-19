@@ -1,11 +1,18 @@
+
 let actionBtns = document.querySelectorAll(".action");
 let gameBoard = document.getElementById("gameBoard");
-let replayBtn = document.querySelectorAll(".replayBtn");
 let scoreContainer = document.getElementById("scoreContainer");
+let playAgainBtn = document.getElementById("playAgainBtn");
+//.........Get buttons............. //  
+let replayBtn = document.querySelectorAll(".replayBtn");
 let rulesBtn = document.getElementById("rulesBtn");
 let nextBtn = document.getElementById("nextBtn");
 let closeBtn = document.getElementById("closeBtn");
+//.........Get rule box............. // 
 let rules_box = document.getElementById("rules_box");
+//.........Get container............. // 
+let container = document.getElementById("container");
+//.........Result board elements............. // 
 let userPickedAction = document.getElementById("userPickedAction");
 let pcPickedAction = document.getElementById("pcPickedAction");
 let resultBoard = document.getElementById("resultBoard");
@@ -19,8 +26,6 @@ let thirdUserOuterDiv = document.getElementById("thirdUserOuterDiv");
 let firstPcOuterDiv = document.getElementById("firstPcOuterDiv");
 let secondPcOuterDiv = document.getElementById("secondPcOuterDiv");
 let thirdPcOuterDiv = document.getElementById("thirdPcOuterDiv");
-let container = document.getElementById("container");
-let playAgainBtn = document.getElementById("playAgainBtn");
 
 let gameData = JSON.parse(localStorage.getItem("gameData")) || {
   pcScore: 0,
