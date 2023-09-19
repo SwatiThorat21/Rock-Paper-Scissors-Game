@@ -236,6 +236,14 @@ body {
   color: #6b6b6b;
   transition: all 0.2s ease-in-out;
 }
+@keyframes ruleBoxAnim {
+  0% {
+    right: 25px;
+  }
+  100% {
+    right: 40px;
+  }
+}
 .rules_box {
   position: absolute;
   right: 40px;
@@ -245,14 +253,16 @@ body {
   background-color: #004429;
   border: 7px solid #ffffff;
   border-radius: 13px;
-  padding: 2rem;
+  padding: 1.5rem;
   display: none;
+  animation-name: ruleBoxAnim;
+  animation-duration: 0.5s;
 }
 .closeBtn {
   position: absolute;
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   right: -31px;
   top: -29px;
   background-color: #ff0000;
@@ -263,6 +273,10 @@ body {
   border-radius: 50%;
   cursor: pointer;
   transition: 0.5s ease-in-out;
+}
+.closeBtn:hover{
+  border: 3px solid #ffffff;
+  background-color: #dd0303;
 }
 .rulesHeading {
   margin-bottom: 1rem;
