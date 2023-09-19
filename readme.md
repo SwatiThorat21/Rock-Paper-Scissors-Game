@@ -19,8 +19,6 @@ Here's a quick video demo of the game:
   <source src="demo-video.mp4" type="video/mp4">  
 </video>
 
-
-
 ## Description
 
 This is a classic Rock, Paper, Scissors game that allows players to compete against the computer. It's a fun and simple project suitable for both learning purposes and casual entertainment.
