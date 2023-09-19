@@ -20,6 +20,7 @@ let firstPcOuterDiv = document.getElementById("firstPcOuterDiv");
 let secondPcOuterDiv = document.getElementById("secondPcOuterDiv");
 let thirdPcOuterDiv = document.getElementById("thirdPcOuterDiv");
 let container = document.getElementById("container");
+let playAgainBtn = document.getElementById("playAgainBtn");
 
 let gameData = JSON.parse(localStorage.getItem("gameData")) || {
   pcScore: 0,
@@ -145,11 +146,16 @@ rulesBtn.addEventListener("click", () => {
 });
 
 closeBtn.addEventListener("click", () => {
-    rules_box.style.display = "none";
-  })
+  rules_box.style.display = "none";
+});
 
 nextBtn.addEventListener("click", () => {
-  console.log('clicked')
-    winner_page.style.display = "flex";
-    container.style.display = "none";
-  });
+  console.log("clicked");
+  winner_page.style.display = "flex";
+  container.style.display = "none";
+});
+
+playAgainBtn.addEventListener("click", () => {
+  winner_page.style.display = "none";
+  container.style.display = "flex";
+});
