@@ -37,5 +37,5 @@ There's no installation required to play the game. Simply visit the demo page (h
 If you want to host the game on your own server, you can clone this repository:
 
 ```bash
-git clone https://github.com/yourusername/rock-paper-scissors.git
+git clone https://github.com/SwatiThorat21/rock-paper-scissors.git
 ```
