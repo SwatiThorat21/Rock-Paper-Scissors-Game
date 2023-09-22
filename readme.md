@@ -15,10 +15,10 @@ You can play the game online by visiting the depolyed page (https://singular-kle
 
 Here's a quick video demo of the game:
 
-<video controls>  
+<!-- <video controls>  
   <source src="demo-video.mp4" type="video/mp4">  
-</video>
-
+</video> -->
+<img src="Screen Recording - Sep 22, 2023.gif" />
 ## Description
 
 This is a classic Rock, Paper, Scissors game that allows players to compete against the computer. It's a fun and simple project suitable for both learning purposes and casual entertainment.
